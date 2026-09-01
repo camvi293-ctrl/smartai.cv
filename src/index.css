@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+:root {
+  /* Soft Chibi / Kawaii Style Palette */
+  --kawaii-pink-pastel: #FFEDF0;
+  --kawaii-pink-light: #FFF0F3;
+  --kawaii-pink-accent: #FF6B81;
+  --kawaii-mint-pastel: #E8F5E9;
+  --kawaii-mint-accent: #4CAF50;
+  --kawaii-shadow: 0 4px 15px rgba(255, 107, 129, 0.15);
+  --kawaii-shadow-hover: 0 8px 25px rgba(255, 107, 129, 0.25);
+
+  /* Image 1: Pink Pastel Palette */
+  --pastel-pink-50: #FFF0F3;
+  --pastel-pink-100: #FFE3E7;
+  --pastel-pink-200: #FFCCD5;
+  --pastel-pink-300: #FFB3C1;
+  --pastel-pink-400: #FF8FA3;
+  --pastel-pink-500: #FF758F;
+  --pastel-pink-600: #FF6B81;
+  --pastel-pink-700: #B9375E;
+
+  /* Image 2: Green Pastel Palette */
+  --pastel-green-nyanza: #D8F3DC;
+  --pastel-green-celadon-light: #E8F5E9;
+  --pastel-green-celadon: #C8E6C9;
+  --pastel-green-mint: #81C784;
+  --pastel-green-jade: #4CAF50;
+  --pastel-green-deep: #2E7D32;
+  --pastel-green-dark: #1B5E20;
+}
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #FFF0F3 0%, #FFEDF0 40%, #F5FBF7 75%, #E8F5E9 100%);
+    color: #1e293b;
+    font-family: 'Nunito', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    min-height: 100vh;
+  }
+}
+
+/* Custom Soft Kawaii Utility Classes */
+.font-kawaii {
+  font-family: 'Quicksand', 'Nunito', sans-serif;
+}
+
+.kawaii-card-shadow {
+  box-shadow: 0 4px 15px rgba(255, 107, 129, 0.15);
+}
+
+.kawaii-card-shadow-hover:hover {
+  box-shadow: 0 8px 25px rgba(255, 107, 129, 0.25);
+  transform: translateY(-3px);
+}
+
+.kawaii-active-card {
+  border: 2px solid #FF6B81 !important;
+  background-color: #FFF0F3 !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 129, 0.22) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* ==========================================================================
+   KAWAII CAT ANIMATIONS (Chuyển động sống động cho các chú mèo)
+   ========================================================================== */
+
+@keyframes catBreathe {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-1.5px) scale(1.015, 0.985);
+  }
+}
+
+@keyframes catTailWagRight {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 75px 80px;
+  }
+  25% {
+    transform: rotate(10deg);
+    transform-origin: 75px 80px;
+  }
+  75% {
+    transform: rotate(-7deg);
+    transform-origin: 75px 80px;
+  }
+}
+
+@keyframes catTailWagLeft {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 25px 80px;
+  }
+  25% {
+    transform: rotate(-10deg);
+    transform-origin: 25px 80px;
+  }
+  75% {
+    transform: rotate(7deg);
+    transform-origin: 25px 80px;
+  }
+}
+
+@keyframes catEarTwitchLeft {
+  0%, 88%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 25px 35px;
+  }
+  92% {
+    transform: rotate(-6deg);
+    transform-origin: 25px 35px;
+  }
+  96% {
+    transform: rotate(4deg);
+    transform-origin: 25px 35px;
+  }
+}
+
+@keyframes catEarTwitchRight {
+  0%, 85%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 75px 35px;
+  }
+  89% {
+    transform: rotate(6deg);
+    transform-origin: 75px 35px;
+  }
+  94% {
+    transform: rotate(-4deg);
+    transform-origin: 75px 35px;
+  }
+}
+
+@keyframes catEyeBlink {
+  0%, 46%, 50%, 96%, 100% {
+    transform: scaleY(1);
+    transform-origin: center;
+  }
+  48%, 98% {
+    transform: scaleY(0.1);
+    transform-origin: center;
+  }
+}
+
+@keyframes catHeartBeat {
+  0%, 100% {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  15% {
+    transform: scale(1.18);
+    transform-origin: center;
+  }
+  30% {
+    transform: scale(1.05);
+    transform-origin: center;
+  }
+  45% {
+    transform: scale(1.22);
+    transform-origin: center;
+  }
+}
+
+@keyframes catSweatDrip {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(3px) scale(1.1, 1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes catSparkleSpin {
+  0% {
+    transform: scale(0.85) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes catSmugGlance {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  30%, 70% {
+    transform: translateX(-2.5px);
+  }
+}
+
+@keyframes catBellyJiggle {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.03, 0.97);
+  }
+}
+
+/* Helper animation classes */
+.cat-anim-breathe {
+  animation: catBreathe 3.2s ease-in-out infinite;
+}
+
+.cat-anim-tail-right {
+  animation: catTailWagRight 2.8s ease-in-out infinite;
+}
+
+.cat-anim-tail-left {
+  animation: catTailWagLeft 2.8s ease-in-out infinite;
+}
+
+.cat-anim-ear-l {
+  animation: catEarTwitchLeft 4.5s ease-in-out infinite;
+}
+
+.cat-anim-ear-r {
+  animation: catEarTwitchRight 5.2s ease-in-out infinite;
+}
+
+.cat-anim-blink {
+  animation: catEyeBlink 4.2s ease-in-out infinite;
+}
+
+.cat-anim-heart {
+  animation: catHeartBeat 1.4s ease-in-out infinite;
+}
+
+.cat-anim-sweat {
+  animation: catSweatDrip 1.8s ease-in-out infinite;
+}
+
+.cat-anim-sparkle {
+  animation: catSparkleSpin 3s linear infinite;
+}
+
+.cat-anim-glance {
+  animation: catSmugGlance 3.5s ease-in-out infinite;
+}
+
+.cat-anim-belly {
+  animation: catBellyJiggle 2.5s ease-in-out infinite;
+}
+
+/* Interactive Cat Mascot Hover Glow */
+.cat-interactive:hover {
+  filter: drop-shadow(0 8px 16px rgba(255, 117, 143, 0.28));
+  transform: translateY(-3px) scale(1.04);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Custom delicate pastel scrollbars based on user palette */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFCCD5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #95D5B2;
+}
+

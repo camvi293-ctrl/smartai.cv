@@ -1,0 +1,6 @@
+{
+  "name": "SmartSchedule AI - Quản Lý Lịch Trình & Lộ Trình Thông Minh",
+  "description": "Ứng dụng quản lý lịch trình cá nhân với AI gợi ý lộ trình thông minh theo độ ưu tiên và thời gian rảnh (ngày/tuần/tháng), đồng bộ đa nền tảng và nhắc nhở qua email.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
